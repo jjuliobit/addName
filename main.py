@@ -5,8 +5,6 @@ lista = []
 
 def add(a):
     lista.append(a)
-    if lista[str] == lista[str]:
-        print('não pode ')
     return
 
 
