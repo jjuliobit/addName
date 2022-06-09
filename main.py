@@ -1,43 +1,40 @@
-from ast import Index
-
-
 lista = []
 
+
 def add(a):
-    lista.append(a)
+    if ad in lista:
+        print('O nome já existe na lista.')
+    else:
+        print(f'Adicionado: {ad} na lista com sucesso.')
+        lista.append(a)
+
+def remover(a):
+    lista.remove(a)
     return
 
-
-def excluir(e):
-    lista.remove(e)
-    return
-
-def limpar(a):
+def remover_tudo(a):
     lista.clear()
     return a
-    
 
-def ver_lista(u):
-    if lista == []:
-        print('==========Lista vazias===========')
+def ver_lista():
+    if not lista == []:
+     print('========== LISTA ==========')
+     print(f'Listas: {lista}')
     else:
-        print('==========Você está na lista==========')
-        print(lista)
-    return u 
+        print('========== LISTAS VAZIAS ==========')
 
 
 while True:
- user = input('digite adicionar , apagar, apagar tudo ou lista: ')
- if user == 'adicionar':
-     ad = input('qual nome que deseja adicionar? ')
-     add(ad)
- elif user == 'apagar':
-      d = input('qual nome que deseja apagar, ou deseja tudo digite apagar tudo? ')
-      excluir(d)
- elif user == 'apagar tudo':
-     cl = input('ceterza que quer apagar tudo?\n digite (s) ou (n): ')
-     limpar(cl)
- elif user == 'lista':
-      ver_lista(user)
-   
-     
+    user = input('Digite\n add, remove, remove all, lista: ')
+    if user == 'add':
+        ad = input('Qual nome que deseja adicionar? ')
+        add(ad)
+    if user == 'remove':
+        remova = input('qual nome que deseja remover? ')
+        remover(remova)
+    if user == 'remove all':
+        remova_all = input('Certeza que quer remover tudo? Digite (s) ou (n)')
+        if remova_all == 's':
+            remover_tudo(remova_all)
+    if user == 'lista':
+        ver_lista()
