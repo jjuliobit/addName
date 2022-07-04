@@ -31,6 +31,16 @@ def remover_tudo(a):
     ver_lista()
     return a
 
+def editar(i):
+    if edita == 'nome':
+     lista['nome'] = i
+     print('Editado nome com sucesso.')
+    if edita == 'idade':
+     lista['idade'] = i
+     print('Editado idade com sucesso.')
+     
+
+
 def ver_lista():
     if not lista == []:
      print()
@@ -43,12 +53,20 @@ def ver_lista():
 
 
 while True:
-    user = input('Digite\n add, remove, remove all, lista: ')
+    user = input('Digite\n add, remove, remove all, editar e lista: ')
     if user == 'add':
         ad_nome = input('Qual é seu nome?\n -> ')
         add(ad_nome)
         ad_idade = input('Qual é sua idade?\n -> ')
         add_idade(ad_idade)
+    if user == 'editar':
+        edita = input('digite nome ou idade que deseja editar? ')
+        if edita == 'nome':
+         edite_nome = input('Digite um nome novo.\n -> ')
+         editar(edite_nome)
+        if edita == 'idade':
+         edite_idade = input('Digite uma idade nova.\n -> ')
+         editar(edite_idade)
     if user == 'remove':
         remova = input('Deseja remover o nome ou idade? ')
         remover(remova)
