@@ -20,9 +20,17 @@ def add_idade(a):
 
 
 def remover(a):
-    if not lista in lista['nome']:
-     lista['nome'].remove(a)
-    return a
+    try:
+     if remova == 'nome':
+      lista['nome'].remove(a)
+      print('Foi removido com sucesso.')
+     if remova == 'idade':
+      str(lista['idade'])
+      lista['idade'].remove(a)
+      print('Foi removido com sucesso.')
+    except TypeError as e:
+        print(f'Erro: {e}')
+    
 
 def remover_tudo(a):
     lista.clear()
@@ -45,15 +53,15 @@ def ver_lista():
     if not lista == []:
      print()
      print('========== LISTA ==========')
-     for nomes in lista.items():
-        print(nomes)
+     for ls in lista.items():
+      print(ls)
     else:
-        print('========== LISTAS VAZIAS ==========')
-        print({lista})
+     print('========== LISTAS VAZIAS ==========')
+     print(f'{lista}')
 
 
 while True:
-    user = input('Digite\n add, remove, remove all, editar e lista: ')
+    user = input('Digite:\n add, remove, remove all, editar e lista: ')
     if user == 'add':
         ad_nome = input('Qual é seu nome?\n -> ')
         add(ad_nome)
@@ -69,7 +77,12 @@ while True:
          editar(edite_idade)
     if user == 'remove':
         remova = input('Deseja remover o nome ou idade? ')
-        remover(remova)
+        if remova == 'nome':
+         remova_nome = input('Qual nome deseja excluir?  ')
+         remover(remova_nome)
+        if remova == 'idade':
+         remova_idade = input('Qual idade deseja excluir?  ')
+         remover(remova_idade)
     if user == 'remove all':
         remova_all = input('Certeza que quer remover tudo? Digite\n (s) ou (n) -> ')
         if remova_all != 's':
